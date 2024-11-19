@@ -16,7 +16,6 @@ import 'package:flutter_core/ume/dialogs/monitor.dart';
 import 'package:flutter_core/ume/dialogs/permission_dialog.dart';
 import 'package:flutter_core/ume/dialogs/role_dialog.dart';
 import 'package:flutter_core/flutter_core.dart';
-import 'package:get/get.dart';
 import 'package:ume/ume.dart'
     hide Monitor, MonitorActionWidget, MonitorPlugin, MonitorActionsPlugin;
 
@@ -59,8 +58,12 @@ class CoreApp extends StatelessWidget {
     if (!kReleaseMode && enabledUme) {
       PluginManager.instance
 
+        // Monitor
+        ..register(MonitorPlugin())
+        ..register(MonitorActionsPlugin())
+
         // Channel monitor
-        ..register(ChannelMonitor())
+        // ..register(ChannelMonitor())
 
         // Channel observer
         ..register(ChannelObserver())
@@ -91,10 +94,6 @@ class CoreApp extends StatelessWidget {
         ..register(MemoryDetectorButton())
 
         // ..register(DBViewer())
-
-        // Monitor
-        ..register(MonitorPlugin() as Pluggable)
-        ..register(MonitorActionsPlugin() as Pluggable)
 
         // Perf
         ..register(Performance())
