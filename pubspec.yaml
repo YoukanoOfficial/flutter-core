@@ -37,7 +37,7 @@ dependencies:
       ref: v1.0.0
   flutter_ume_action:
     git:
-      url: https://github.com/YoukanoOfficial/flutter-ume
+      url: https://github.com/YoukanoOfficial/flutter-ume-action.git
       ref: v2.0.0
 
 # dependency_overrides:
