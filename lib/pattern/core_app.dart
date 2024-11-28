@@ -11,7 +11,6 @@ import 'package:flutter_core/ume/dialogs/role_dialog.dart';
 import 'package:flutter_core/flutter_core.dart';
 import 'package:flutter_ume/flutter_ume.dart'
     hide Monitor, MonitorActionWidget, MonitorPlugin, MonitorActionsPlugin;
-import 'package:flutter_ume_action/flutter_ume_action.dart';
 
 class CoreApp extends StatelessWidget {
   final Widget materialApp;
