@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_ume/flutter_ume.dart';
+import 'package:flutter_ume_action/flutter_ume_action.dart';
 
 import '../../ume/utils/convert.dart';
 import '../../ume/utils/ume_const.dart';
