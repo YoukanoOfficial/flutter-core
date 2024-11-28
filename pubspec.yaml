@@ -32,12 +32,13 @@ dependencies:
 
   # Flutter Ume
   flutter_ume:
-    path: ../ume
+    git:
+      url: https://github.com/YoukanoOfficial/flutter-ume.git
+      ref: v1.0.0
   flutter_ume_action:
-    path: "../ume_action"
-    # git:
-    #   url: https://github.com/YoukanoOfficial/flutter-ume.git
-    #   ref: v1.0.0
+    git:
+      url: https://github.com/YoukanoOfficial/flutter-ume-action.git
+      ref: v2.0.0
 
 # dependency_overrides:
 #   vm_service: ^14.3.0
