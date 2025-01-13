@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_ume/flutter_ume.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -9,15 +9,15 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 // import 'package:ume_kit_device/ume_kit_device.dart';
 // import 'package:ume_kit_console/ume_kit_console.dart';
 // import 'package:ume_kit_channel_monitor/ume_kit_channel_monitor.dart';
-import 'package:flutter_core/ume/dialogs/environment_dialog.dart';
-import 'package:flutter_core/ume/dialogs/language_dialog.dart';
-import 'package:flutter_core/ume/dialogs/local_storage_dialog.dart';
-import 'package:flutter_core/ume/dialogs/monitor.dart';
-import 'package:flutter_core/ume/dialogs/permission_dialog.dart';
-import 'package:flutter_core/ume/dialogs/role_dialog.dart';
-import 'package:flutter_core/flutter_core.dart';
-import 'package:ume/ume.dart'
-    hide Monitor, MonitorActionWidget, MonitorPlugin, MonitorActionsPlugin;
+// import 'package:flutter_core/ume/dialogs/environment_dialog.dart';
+// import 'package:flutter_core/ume/dialogs/language_dialog.dart';
+// import 'package:flutter_core/ume/dialogs/local_storage_dialog.dart';
+// import 'package:flutter_core/ume/dialogs/monitor.dart';
+// import 'package:flutter_core/ume/dialogs/permission_dialog.dart';
+// import 'package:flutter_core/ume/dialogs/role_dialog.dart';
+// import 'package:flutter_core/flutter_core.dart';
+// import 'package:ume/ume.dart'
+//     hide Monitor, MonitorActionWidget, MonitorPlugin, MonitorActionsPlugin;
 
 class CoreApp extends StatelessWidget {
   final Widget materialApp;
@@ -55,168 +55,170 @@ class CoreApp extends StatelessWidget {
       );
     }
 
-    if (!kReleaseMode && enabledUme) {
-      PluginManager.instance
+    // if (!kReleaseMode && enabledUme) {
+    //   PluginManager.instance
 
-        // Monitor
-        ..register(MonitorPlugin())
-        ..register(MonitorActionsPlugin())
+    //     // Monitor
+    //     ..register(MonitorPlugin())
+    //     ..register(MonitorActionsPlugin())
 
-        // Channel monitor
-        // ..register(ChannelMonitor())
+    //     // Channel monitor
+    //     // ..register(ChannelMonitor())
 
-        // Channel observer
-        ..register(ChannelObserver())
+    //     // Channel observer
+    //     ..register(ChannelObserver())
 
-        // Clean local data
-        ..register(DataCleanPanel())
+    //     // Clean local data
+    //     ..register(DataCleanPanel())
 
-        // Console
-        ..register(Console())
+    //     // Console
+    //     ..register(Console())
 
-        // Database
-        ..register(DatabasePanel(databases: []))
+    //     // Database
+    //     ..register(DatabasePanel(databases: []))
 
-        // Designer check
-        ..register(DesignerCheck())
+    //     // Designer check
+    //     ..register(DesignerCheck())
 
-        // Device
-        // ..register(CpuInfoPage())
-        // ..register(DeviceInfoPanel())
+    //     // Device
+    //     // ..register(CpuInfoPage())
+    //     // ..register(DeviceInfoPanel())
 
-        // Dio
-        // ..register(DioInspector(dio: dio))
+    //     // Dio
+    //     // ..register(DioInspector(dio: dio))
 
-        // GetConnect
-        // ..register(GetConnectInspector(connect: get_connect))
+    //     // GetConnect
+    //     // ..register(GetConnectInspector(connect: get_connect))
 
-        // Memory detector
-        ..register(MemoryDetectorButton())
+    //     // Memory detector
+    //     ..register(MemoryDetectorButton())
 
-        // ..register(DBViewer())
+    //     // ..register(DBViewer())
 
-        // Perf
-        ..register(Performance())
-        ..register(MemoryInfoPage())
+    //     // Perf
+    //     ..register(Performance())
+    //     ..register(MemoryInfoPage())
 
-        // SharedPreferences
-        ..register(SharedPreferencesInspector())
+    //     // SharedPreferences
+    //     ..register(SharedPreferencesInspector())
 
-        // Show code
-        ..register(ShowCode())
+    //     // Show code
+    //     ..register(ShowCode())
 
-        // Slow animation
-        ..register(SlowAnimation())
-        // UI inspector
-        ..register(WidgetInfoInspector())
-        ..register(WidgetDetailInspector())
-        ..register(ColorSucker())
-        ..register(AlignRuler())
-        ..register(ColorPicker())
-        ..register(TouchIndicator());
+    //     // Slow animation
+    //     ..register(SlowAnimation())
+    //     // UI inspector
+    //     ..register(WidgetInfoInspector())
+    //     ..register(WidgetDetailInspector())
+    //     ..register(ColorSucker())
+    //     ..register(AlignRuler())
+    //     ..register(ColorPicker())
+    //     ..register(TouchIndicator());
 
-      // PluginManager.instance
-      //   ..register(const MonitorPlugin())
-      //   ..register(const MonitorActionsPlugin())
-      //   ..register(const WidgetInfoInspector())
-      //   ..register(const WidgetDetailInspector())
-      //   ..register(const ColorSucker())
-      //   ..register(AlignRuler())
-      //   ..register(const ColorPicker())
-      //   ..register(const TouchIndicator())
-      //   ..register(Performance())
-      //   ..register(const ShowCode())
-      //   ..register(const MemoryInfoPage())
-      //   ..register(CpuInfoPage())
-      //   ..register(const DeviceInfoPanel())
-      //   ..register(ChannelPlugin())
-      //   ..register(Console());
-      // ..register(DioInspector(dio: dio));
+    // PluginManager.instance
+    //   ..register(const MonitorPlugin())
+    //   ..register(const MonitorActionsPlugin())
+    //   ..register(const WidgetInfoInspector())
+    //   ..register(const WidgetDetailInspector())
+    //   ..register(const ColorSucker())
+    //   ..register(AlignRuler())
+    //   ..register(const ColorPicker())
+    //   ..register(const TouchIndicator())
+    //   ..register(Performance())
+    //   ..register(const ShowCode())
+    //   ..register(const MemoryInfoPage())
+    //   ..register(CpuInfoPage())
+    //   ..register(const DeviceInfoPanel())
+    //   ..register(ChannelPlugin())
+    //   ..register(Console());
+    // ..register(DioInspector(dio: dio));
 
-      Monitor.instance.addActions([
-        MonitorActionWidget(
-          title: "Environment Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return EnvironmentDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-        MonitorActionWidget(
-          title: "Local Storage Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const LocalStorageDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-        MonitorActionWidget(
-          title: "Language Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const LanguageDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-        MonitorActionWidget(
-          title: "Role Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const RoleDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-        MonitorActionWidget(
-          title: "Monitor Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const MonitorDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-        MonitorActionWidget(
-          title: "Permission Page",
-          onTap: () {
-            Navigator.of(Get.context!).push(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return const PermissionDialog();
-                },
-                fullscreenDialog: true,
-              ),
-            );
-          },
-        ),
-      ]);
-    }
+    //   Monitor.instance.addActions([
+    //     MonitorActionWidget(
+    //       title: "Environment Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return EnvironmentDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //     MonitorActionWidget(
+    //       title: "Local Storage Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return const LocalStorageDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //     MonitorActionWidget(
+    //       title: "Language Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return const LanguageDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //     MonitorActionWidget(
+    //       title: "Role Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return const RoleDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //     MonitorActionWidget(
+    //       title: "Monitor Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return const MonitorDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //     MonitorActionWidget(
+    //       title: "Permission Page",
+    //       onTap: () {
+    //         Navigator.of(Get.context!).push(
+    //           MaterialPageRoute(
+    //             builder: (BuildContext context) {
+    //               return const PermissionDialog();
+    //             },
+    //             fullscreenDialog: true,
+    //           ),
+    //         );
+    //       },
+    //     ),
+    //   ]);
+    // }
 
-    return !kReleaseMode && enabledUme
-        ? UMEWidget(enable: true, child: child)
-        : child;
+    // return !kReleaseMode && enabledUme
+    //     ? UMEWidget(enable: true, child: child)
+    //     : child;
+
+    return child;
   }
 }
