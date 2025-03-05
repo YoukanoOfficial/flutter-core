@@ -22,8 +22,8 @@ dependencies:
   cached_network_image:
   dio:
   dio_cache_interceptor:
-  permission_handler:
-  connectivity_plus:
+  # permission_handler:
+  # connectivity_plus:
   device_info_plus:
   package_info_plus:
   pull_to_refresh:
