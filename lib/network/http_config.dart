@@ -6,7 +6,6 @@ import '../utils/uuid.dart';
 import 'interceptors/ume_interceptor.dart';
 
 class HttpConfig {
-
   static HttpConfig? _instance;
   static Dio dio = Dio();
 
@@ -24,11 +23,14 @@ class HttpConfig {
   }
 
   Future<Dio> initialize() async {
-    final String? token = CoreLocalStorage.get<String>(CoreLocalStorageConstants.token);
+    final String? token =
+        CoreLocalStorage.get<String>(CoreLocalStorageConstants.token);
     String? lang = CoreLocalStorage.get<String>(CoreLocalStorageConstants.lang);
-    String? deviceId = CoreLocalStorage.get<String>(CoreLocalStorageConstants.deviceId);
+    String? deviceId =
+        CoreLocalStorage.get<String>(CoreLocalStorageConstants.deviceId);
 
-    dio.options.baseUrl = CoreLocalStorage.get<String>(CoreLocalStorageConstants.baseUrl) ?? '';
+    dio.options.baseUrl =
+        CoreLocalStorage.get<String>(CoreLocalStorageConstants.baseUrl) ?? '';
 
     // Set connection and receive timeout (in milliseconds)
     dio.options.connectTimeout = const Duration(seconds: 30); // 30 seconds
@@ -41,16 +43,19 @@ class HttpConfig {
     dio.options.headers['Content-Type'] = Headers.jsonContentType;
     dio.options.headers['Access-Control-Allow-Origin'] = '*';
     dio.options.headers['Access-Control-Allow-Credentials'] = true;
-    dio.options.headers['Access-Control-Allow-Headers'] = 'Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale';
+    dio.options.headers['Access-Control-Allow-Headers'] =
+        'Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale';
     // dio.options.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, UPDATE, OPTIONS, HEAD, DELETE';
 
     // Token
-    if(token != null) {
+    if (token != null) {
       dio.options.headers['Authorization'] = 'Bearer $token';
+    } else {
+      dio.options.headers.remove('Authorization');
     }
 
     // Language
-    if(lang == null) {
+    if (lang == null) {
       lang = 'en';
       CoreLocalStorage.save(CoreLocalStorageConstants.lang, lang);
     }
@@ -59,7 +64,7 @@ class HttpConfig {
     dio.options.headers['Accept-Language'] = lang;
 
     // Device ID
-    if(deviceId == null) {
+    if (deviceId == null) {
       deviceId = generateUUID();
       CoreLocalStorage.save(CoreLocalStorageConstants.deviceId, deviceId);
     }
